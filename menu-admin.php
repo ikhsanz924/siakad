@@ -16,7 +16,7 @@
             <li><a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             
             <li class="treeview">
-              <a href="#"><i class="fa fa-th"></i> <span>Data Master</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-th"></i> <span>Data Masters</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="index.php?view=identitas"><i class="fa fa-circle-o"></i> Data Identitas Sekolah</a></li>
                 <li><a href="index.php?view=kurikulum"><i class="fa fa-circle-o"></i> Data Kurikulum</a></li>
