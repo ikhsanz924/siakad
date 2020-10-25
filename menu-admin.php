@@ -172,7 +172,7 @@
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Keuangan</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=test"><i class="fa fa-circle-o"></i> Data Uangs Masuk</a></li>
+                <li><a href="index.php?view=test"><i class="fa fa-circle-o"></i> Data Uang Masuk</a></li>
                 <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Data laporan BOSDA</a></li>
                 <li><a href="index.php?view=riwayatkeuangan"><i class="fa fa-circle-o"></i> Riwayat Keuangan Siswa</a></li>
               </ul>
