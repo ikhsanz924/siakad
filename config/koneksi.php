@@ -37,6 +37,62 @@ function cek_session_guru(){
 	}
 }
 
+function cek_session_keuangan(){
+	$level = $_SESSION[level];
+	if ($level != 'keuangan' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_manmutu(){
+	$level = $_SESSION[level];
+	if ($level != 'manmutu' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_lsp(){
+	$level = $_SESSION[level];
+	if ($level != 'lsp' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_kesiswaan(){
+	$level = $_SESSION[level];
+	if ($level != 'kesiswaan' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_bkk(){
+	$level = $_SESSION[level];
+	if ($level != 'bkk' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_humas(){
+	$level = $_SESSION[level];
+	if ($level != 'humas' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_subrayon(){
+	$level = $_SESSION[level];
+	if ($level != 'subrayon' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
+function cek_session_tu(){
+	$level = $_SESSION[level];
+	if ($level != 'tu' AND $level != 'superuser' AND $level != 'kepala'){
+		echo "<script>document.location='index.php';</script>";
+	}
+}
+
 function cek_session_siswa(){
 	$level = $_SESSION[level];
 	if ($level == ''){

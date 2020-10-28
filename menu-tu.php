@@ -18,7 +18,7 @@
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Tata Usaha</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=raportuts"><i class="fa fa-circle-o"></i>Surat</a></li>s
+              <li><a href="index.php?view=pengadaan"><i class="fa fa-circle-o"></i>Pengadaan Barang</a></li>
               </ul>
             </li>
           </ul>

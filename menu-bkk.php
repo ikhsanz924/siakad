@@ -17,8 +17,8 @@
 			<li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Bursa Kerja Khusus</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=absenguru"><i class="fa fa-circle-o"></i> Data Kerja Alumni</a></li>
-                <li><a href="index.php?view=absensiswa"><i class="fa fa-circle-o"></i> Jadwal Kegiatan Rekruitasi</a></li>
+              <li><a href="index.php?view=dataalumni"><i class="fa fa-circle-o"></i> Data Kerja Alumni</a></li>
+                <li><a href="index.php?view=jadwalrekrut"><i class="fa fa-circle-o"></i> Jadwal Kegiatan Rekruitasi</a></li>
               </ul>
             </li>
           </ul>

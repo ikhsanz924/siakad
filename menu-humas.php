@@ -17,10 +17,11 @@
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Humas</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=kelompokmapel"><i class="fa fa-circle-o"></i>Nilai UKK</a></li>
-                <li><a href="index.php?view=matapelajaran"><i class="fa fa-circle-o"></i>Data PKL</a></li>
-                <li><a href="index.php?view=jadwalpelajaran"><i class="fa fa-circle-o"></i>Arsip MOU & DUDI</a></li>
-                <li><a href="index.php?view=bahantugas"><i class="fa fa-circle-o"></i>Data Sertifikat</a></li>
+              <li><a href="index.php?view=nilaiukkdudi"><i class="fa fa-circle-o"></i>Nilai UKK</a></li>
+                <li><a href="index.php?view=datatempatprakrin"><i class="fa fa-circle-o"></i>Data Tempat Prakrin</a></li>
+                <li><a href="index.php?view=dataprakrin"><i class="fa fa-circle-o"></i>Data Prakrin</a></li>
+                <li><a href="index.php?view=dataarsip"><i class="fa fa-circle-o"></i>Arsip MOU & DUDI</a></li>
+                <li><a href="index.php?view=sertifikatprakerin"><i class="fa fa-circle-o"></i>Data Sertifikat</a></li>
               </ul>
             </li>
           </ul>

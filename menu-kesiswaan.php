@@ -21,7 +21,7 @@
                 <li><a href="index.php?view=psbmenu"><i class="fa fa-circle-o"></i> Absen Siswa</a></li>
                 <li><a href="index.php?view=psbhalaman"><i class="fa fa-circle-o"></i> Data Siswa Bimbingan</a></li>
               </ul>
-</li>
+            </li>
           </ul>
           
         </section>

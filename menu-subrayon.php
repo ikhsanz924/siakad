@@ -17,14 +17,14 @@
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Sub Rayon</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-              <li><a href="index.php?view=anggotasubrayon"><i class="fa fa-circle-o"></i>Anggota Sub Rayon</a></li>
+                <li><a href="index.php?view=anggotasubrayon"><i class="fa fa-circle-o"></i>Anggota Sub Rayon</a></li>
                 <li><a href="index.php?view=panitiapenyelenggara"><i class="fa fa-circle-o"></i>Panitia Penyelenggara UN,UKK</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Pengawas Silang</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Rincian Anggaran  Sub Rayon</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Jadwal UN</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Jadwal UKK</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Hasil Notulen Rapat Sub Rayon</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Verifikasi Tempat Kerja</a></li>
+                <li><a href="index.php?view=pengawassilang"><i class="fa fa-circle-o"></i>Pengawas Silang</a></li>
+                <li><a href="index.php?view=rinciananggaran"><i class="fa fa-circle-o"></i>Rincian Anggaran  Sub Rayon</a></li>
+                <li><a href="index.php?view=jadwalun"><i class="fa fa-circle-o"></i>Jadwal UN</a></li>
+                <li><a href="index.php?view=jadwalukk"><i class="fa fa-circle-o"></i>Jadwal UKK</a></li>
+                <li><a href="index.php?view=hasilnotulensi"><i class="fa fa-circle-o"></i>Hasil Notulen Rapat Sub Rayon</a></li>
+                <li><a href="index.php?view=tuk"><i class="fa fa-circle-o"></i>Verifikasi Tempat Kerja</a></li>
               </ul>
             </li>
           </ul>

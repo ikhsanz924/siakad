@@ -221,6 +221,22 @@
                   include "application/home_siswa.php";
               }elseif($_SESSION[level]=='guru'){
                   include "application/home_guru.php";
+              }elseif($_SESSION[level]=='subrayon'){
+                include " ";
+              }elseif($_SESSION[level]=='tu'){
+                include " ";
+              }elseif($_SESSION[level]=='humas'){
+                include " ";
+              }elseif($_SESSION[level]=='bkk'){
+                include " ";
+              }elseif($_SESSION[level]=='keuangan'){
+                include " ";
+              }elseif($_SESSION[level]=='manmutu'){
+                include " ";
+              }elseif($_SESSION[level]=='lsp'){
+                include " ";
+              }elseif($_SESSION[level]=='kesiswaan'){
+                include " ";
               }else{
                   echo "<div class='row'>";
                           include "application/home_admin_row1.php";
@@ -230,7 +246,7 @@
                   echo "</div>";
               }
           }elseif ($_GET[view]=='riwayatkeuangan'){
-            cek_session_admin();
+            cek_session_keuangan();
             echo "<div class='row'>";
                     include "application/master_riwayat_pembayaran_siswa.php";
             echo "</div>";
@@ -242,73 +258,73 @@
             echo "</div>";
           }
           elseif ($_GET[view]=='jadwalrekrut'){
-            cek_session_admin();
+            cek_session_bkk();
             echo "<div class='row'>";
                     include "application/master_jadwal_kegiatan_rekrut.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='dataalumni'){
-            cek_session_admin();
+            cek_session_bkk();
             echo "<div class='row'>";
                     include "application/master_data_kerja_alumni.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='dataarsip'){
-            cek_session_admin();
+            cek_session_humas();
             echo "<div class='row'>";
                     include "application/master_arsip_mou_dudi.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='nilaiukkdudi'){
-            cek_session_admin();
+            cek_session_humas();
             echo "<div class='row'>";
                     include "application/master_nilai_ukk_dudi.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='datatempatprakrin'){
-            cek_session_admin();
+            cek_session_humas();
             echo "<div class='row'>";
                     include "application/master_tempat_prakerin.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='dataprakrin'){
-            cek_session_admin();
+            cek_session_humas();
             echo "<div class='row'>";
                     include "application/master_data_prakerin.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='rinciananggaran'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_rincian_anggaran.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='hasilnotulensi'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_notulensi_rapat.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='jadwalukk'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_jadwal_ukk.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='pengawassilang'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_pengawas_silang.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='panitiapenyelenggara'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_panitia_penyelenggara.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='jadwalun'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_jadwal_un.php";
             echo "</div>";
@@ -319,7 +335,7 @@
                     include "application/master_jadwal_pengawas.php";
             echo "</div>";
           }elseif ($_GET[view]=='anggotasubrayon'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_anggota_sub_rayon.php";
             echo "</div>";
@@ -355,7 +371,7 @@
             echo "</div>";
           }
           elseif ($_GET[view]=='pengadaan'){
-            cek_session_admin();
+            cek_session_tu();
             echo "<div class='row'>";
                     include "application/master_pengadaanbarang.php";
             echo "</div>";
@@ -373,13 +389,13 @@
             echo "</div>";
           }
           elseif ($_GET[view]=='tuk'){
-            cek_session_admin();
+            cek_session_subrayon();
             echo "<div class='row'>";
                     include "application/master_verifikasituk.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='sertifikatprakerin'){
-            cek_session_admin();
+            cek_session_humas();
             echo "<div class='row'>";
                     include "application/master_sertifikatprakerin.php";
             echo "</div>";
