@@ -135,14 +135,14 @@
                     <tr><th width='120px' scope='row'>Username</th> <td><input type='text' class='form-control' name='a'> </td></tr>
                     <tr><th scope='row'>Password</th>               <td><input type='text' class='form-control' name='b'></td></tr>
                     <tr><th scope='row'>Nama Lengkap</th>           <td><input type='text' class='form-control' name='c'></td></tr>
-                    <tr><th scope='row'>Alamat Email</th>           <td><input type='text' class='form-control' name='d' value='$s[email]'></td></tr>
-                    <tr><th scope='row'>No Telpon</th>              <td><input type='text' class='form-control' name='e' value='$s[no_telpon]'></td></tr>
-                    <tr><th scope='row'>Jabatan</th>                <td><input type='text' class='form-control' name='f' value='$s[jabatan]'></td></tr>
+                    <tr><th scope='row'>Alamat Email</th>           <td><input type='text' class='form-control' name='d'></td></tr>
+                    <tr><th scope='row'>No Telpon</th>              <td><input type='text' class='form-control' name='e'></td></tr>
+                    <tr><th scope='row'>Jabatan</th>                <td><input type='text' class='form-control' name='f'></td></tr>
                     <tr><th scope='row'>Level</th>              <td><select class='form-control' name='g'> 
                   <option value='0' selected>- Pilih Level -</option>"; 
                     $level = mysqli_query($koneksi,"SELECT * FROM level_user");
                     while($a = mysqli_fetch_array($level)){
-                        echo "<option value='$a[id]'>$a[level]</option>";
+                        echo "<option value='$a[level]'>$a[level]</option>";
                     }
           echo "</select></td></tr>
                   </tbody>
