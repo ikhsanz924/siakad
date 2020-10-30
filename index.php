@@ -71,6 +71,16 @@
          }else{
             $foto = 'foto_pegawai/'.$gu[foto];
          }     
+      }elseif($_SESSION[level]=='kurikulum'){
+        $iden = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM users where id_user='$_SESSION[id]'"));
+          $gu = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM guru where nip='$iden[username]'"));
+         $nama =  $iden[nama_lengkap];
+         $level = 'Kurikulum';
+         if (trim($gu[foto])==''){
+            $foto = 'foto_siswa/no-image.jpg';
+         }else{
+            $foto = 'foto_pegawai/'.$gu[foto];
+         }     
       }elseif($_SESSION[level]=='guru'){
           $iden = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM guru where nip='$_SESSION[id]'"));
            $nama =  $iden[nama_guru];
@@ -105,6 +115,16 @@
           $gu = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM guru where nip='$iden[username]'"));
          $nama =  $iden[nama_lengkap];
          $level = 'Tata Usaha';
+         if (trim($gu[foto])==''){
+            $foto = 'foto_siswa/no-image.jpg';
+         }else{
+            $foto = 'foto_pegawai/'.$gu[foto];
+         }     
+      }elseif($_SESSION[level]=='sarpras'){
+        $iden = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM users where id_user='$_SESSION[id]'"));
+          $gu = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM guru where nip='$iden[username]'"));
+         $nama =  $iden[nama_lengkap];
+         $level = 'Sarana & Prasarana';
          if (trim($gu[foto])==''){
             $foto = 'foto_siswa/no-image.jpg';
          }else{
@@ -202,6 +222,10 @@
                 include "menu-keuangan.php";
               }elseif ($_SESSION[level]=='tu'){
                 include "menu-tu.php";
+              }elseif ($_SESSION[level]=='sarpras'){
+                include "menu-sarpras.php";
+              }elseif ($_SESSION[level]=='kurikulum'){
+                include "menu-kurikulum.php";
               }
               else{
                 include "menu-admin.php"; 
@@ -225,6 +249,8 @@
                 include " ";
               }elseif($_SESSION[level]=='tu'){
                 include " ";
+              }elseif($_SESSION[level]=='sarpras'){
+                include " ";
               }elseif($_SESSION[level]=='humas'){
                 include " ";
               }elseif($_SESSION[level]=='bkk'){
@@ -237,7 +263,10 @@
                 include " ";
               }elseif($_SESSION[level]=='kesiswaan'){
                 include " ";
-              }else{
+              }elseif($_SESSION[level]=='kurikulum'){
+                include " ";
+              }
+              else{
                   echo "<div class='row'>";
                           include "application/home_admin_row1.php";
                   echo "</div>
@@ -245,6 +274,37 @@
                           include "application/home_admin_row2.php";
                   echo "</div>";
               }
+          }elseif ($_GET[view]=='surat'){
+            cek_session_manmutu();
+            echo "<div class='row'>";
+                    include "application/master_surat.php";
+            echo "</div>";
+          }
+          elseif ($_GET[view]=='laporanmutu'){
+            cek_session_manmutu();
+            echo "<div class='row'>";
+                    include "application/master_arsip_laporan_mutu.php";
+            echo "</div>";
+          }elseif ($_GET[view]=='gajipegawai'){
+            cek_session_keuangan();
+            echo "<div class='row'>";
+                    include "application/master_data_gaji_pegawai.php";
+            echo "</div>";
+          }elseif ($_GET[view]=='nilaiukklsp'){
+            cek_session_lsp();
+            echo "<div class='row'>";
+                    include "application/master_nilai_ukk_lsp.php";
+            echo "</div>";
+          }elseif ($_GET[view]=='saldokomite'){
+            cek_session_keuangan();
+            echo "<div class='row'>";
+                    include "application/master_laporan_komite.php";
+            echo "</div>";
+          }elseif ($_GET[view]=='laporanrab'){
+            cek_session_keuangan();
+            echo "<div class='row'>";
+                    include "application/master_laporan_rab.php";
+            echo "</div>";
           }elseif ($_GET[view]=='riwayatkeuangan'){
             cek_session_keuangan();
             echo "<div class='row'>";
@@ -252,7 +312,7 @@
             echo "</div>";
           }
           elseif ($_GET[view]=='peminjamanbarang'){
-            cek_session_admin();
+            cek_session_sarpras();
             echo "<div class='row'>";
                     include "application/master_peminjaman_barang.php";
             echo "</div>";
@@ -330,7 +390,7 @@
             echo "</div>";
           }
           elseif ($_GET[view]=='jadwalpengawas'){
-            cek_session_admin();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/master_jadwal_pengawas.php";
             echo "</div>";
@@ -422,7 +482,7 @@
                     include "application/master_siswa.php";
             echo "</div>";
           }elseif ($_GET[view]=='guru'){
-            cek_session_guru();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/master_guru.php";
             echo "</div>";
@@ -447,23 +507,23 @@
                     include "application/master_tahun_akademik.php";
             echo "</div>";
           }elseif ($_GET[view]=='gedung'){
-            cek_session_admin();
+            cek_session_sarpras();
             echo "<div class='row'>";
                     include "application/master_gedung.php";
             echo "</div>";
           }elseif ($_GET[view]=='ruangan'){
-            cek_session_admin();
+            cek_session_sarpras();
             echo "<div class='row'>";
                     include "application/master_ruangan.php";
             echo "</div>";
           }elseif ($_GET[view]=='skberkala'){
-            cek_session_admin();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/master_skberkala.php";
             echo "</div>";
           }
           elseif ($_GET[view]=='jadwalujian'){
-            cek_session_admin();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/master_jadwal_ujian.php";
             echo "</div>";
@@ -478,12 +538,12 @@
                     include "application/master_ptk.php";
             echo "</div>";
           }elseif ($_GET[view]=='matapelajaran'){
-            cek_session_admin();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/master_matapelajaran.php";
             echo "</div>";
           }elseif ($_GET[view]=='jadwalpelajaran'){
-            cek_session_admin();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/master_jadwalpelajaran.php";
             echo "</div>";
@@ -536,7 +596,7 @@
 
 
           elseif ($_GET[view]=='absensiswa'){
-            cek_session_guru();
+            cek_session_kurikulum();
             echo "<div class='row'>";
                     include "application/absensi_siswa.php";
             echo "</div>";

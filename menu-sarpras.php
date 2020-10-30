@@ -14,12 +14,13 @@
           <ul class="sidebar-menu">
             <li class="header" style='color:#fff; text-transform:uppercase; border-bottom:2px solid #00c0ef'>MENU <?php echo $level; ?></li>
             <li><a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        
+            
             <li class="treeview">
-              <a href="#"><i class="fa fa-th"></i> <span>Lembaga Sertifikasi Profesi</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-th"></i> <span>Sarana & Prasarana</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=tuk"><i class="fa fa-circle-o"></i> Verifikasi Tempat Kerja</a></li>
-                <li><a href="index.php?view=nilaiukklsp"><i class="fa fa-circle-o"></i> Nilai UKK</a></li>
+                <li><a href="index.php?view=gedung"><i class="fa fa-circle-o"></i> Data Gedung</a></li>
+                <li><a href="index.php?view=ruangan"><i class="fa fa-circle-o"></i> Data Ruangan</a></li>
+                <li><a href="index.php?view=peminjamanbarang"><i class="fa fa-circle-o"></i>Peminjaman Barang</a></li>
               </ul>
             </li>
           </ul>

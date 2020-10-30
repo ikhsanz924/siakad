@@ -670,7 +670,7 @@ if ($_GET[act]==''){
                                     LEFT JOIN agama e ON a.id_agama=e.id_agama 
                                       where a.nisn='$nisn'");
     $s = mysqli_fetch_array($detail);
-    $pembayaran = mysqli_query($koneksi,"SELECT * FROM riwayat_keuangan_siswa");
+    $pembayaran = mysqli_query($koneksi,"SELECT * FROM riwayat_keuangan_siswa where nisn = '$nisn'");
     
     echo "<div class='col-md-12'>
               <div class='box box-info'>

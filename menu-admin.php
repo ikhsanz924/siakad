@@ -163,29 +163,47 @@
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class="fa fa-th"></i> <span>Lembaga Sertifikasi Profesi</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-th"></i> <span>Manajemen Mutu</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=tuk"><i class="fa fa-circle-o"></i> Verifikasi Tempat Kerja</a></li>
-                <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Nilai UKK</a></li>
+                <li><a href="index.php?view=laporanmutu"><i class="fa fa-circle-o"></i>Arsip</a></li>
               </ul>
             </li>
             <li class="treeview">
-              <a href="#"><i class="fa fa-th"></i> <span>Keuangan</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-th"></i> <span>Lembaga Sertifikasi Profesi</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=test"><i class="fa fa-circle-o"></i> Data Uang Masuk</a></li>
-                <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Data laporan BOSDA</a></li>
-                <li><a href="index.php?view=riwayatkeuangan"><i class="fa fa-circle-o"></i> Riwayat Keuangan Siswa</a></li>
+                <li><a href="index.php?view=tuk"><i class="fa fa-circle-o"></i> Verifikasi Tempat Kerja</a></li>
+                <li><a href="index.php?view=nilaiukklsp"><i class="fa fa-circle-o"></i> Nilai UKK</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-th"></i> <span>Komite</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+              <li><a href="index.php?view=laporanrab"><i class="fa fa-circle-o"></i>Upload Laporan RAB</a></li>
+              <li><a href="index.php?view=saldokomite"><i class="fa fa-circle-o"></i>Laporan Saldo Komite</a></li>
+              <li><a href="index.php?view=gajipegawai"><i class="fa fa-circle-o"></i>Data Gaji Pegawai</a></li>
+              <li><a href="index.php?view=riwayatkeuangan"><i class="fa fa-circle-o"></i>SPP Komite Murid</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#"><i class="fa fa-th"></i> <span>BOSDA</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">            
+                <li><a href="index.php?view=laporanrab"><i class="fa fa-circle-o"></i> Upload laporan RAB</a></li>
+                <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Upload laporan BKP</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Tata Usaha</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="index.php?view=pengadaan"><i class="fa fa-circle-o"></i>Pengadaan Barang</a></li>
+                <li><a href="index.php?view=surat"><i class="fa fa-circle-o"></i>Upload Surat Masuk & Keluar</a></li>
+                <li><a href="index.php?view=peminjamanbarang"><i class="fa fa-circle-o"></i>Peminjaman Barang</a></li>
               </ul>
             </li>
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Sarana & Prasarana</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
+                <li><a href="index.php?view=gedung"><i class="fa fa-circle-o"></i> Data Gedung</a></li>
+                <li><a href="index.php?view=ruangan"><i class="fa fa-circle-o"></i> Data Ruangan</a></li>
                 <li><a href="index.php?view=peminjamanbarang"><i class="fa fa-circle-o"></i>Peminjaman Barang</a></li>
               </ul>
             </li>

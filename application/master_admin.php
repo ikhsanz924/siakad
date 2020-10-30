@@ -96,9 +96,9 @@
                       $level = mysqli_query($koneksi,"SELECT * FROM level_user");
                       while($a = mysqli_fetch_array($level)){
                         if ($a[id] == $s[id]){
-                          echo "<option value='$a[id]' selected>$a[level]</option>";
+                          echo "<option value='$a[level]' selected>$a[level]</option>";
                         }else{
-                          echo "<option value='$a[id]'>$a[level]</option>";
+                          echo "<option value='$a[level]'>$a[level]</option>";
                         }
                       }
             echo "</select></td></tr>

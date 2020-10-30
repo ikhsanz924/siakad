@@ -19,6 +19,8 @@
               <a href="#"><i class="fa fa-th"></i> <span>Tata Usaha</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
               <li><a href="index.php?view=pengadaan"><i class="fa fa-circle-o"></i>Pengadaan Barang</a></li>
+                <li><a href="index.php?view=surat"><i class="fa fa-circle-o"></i>Upload Surat Masuk & Keluar</a></li>
+                <li><a href="index.php?view=peminjamanbarang"><i class="fa fa-circle-o"></i>Peminjaman Barang</a></li>
               </ul>
             </li>
           </ul>

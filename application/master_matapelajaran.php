@@ -17,7 +17,6 @@
                         <th>Jurusan</th>
                         <th>Tingkat</th>
                         <th>Guru Pengajar </th>
-                        
                         <?php if($_SESSION[level]!='kepala'){ ?>
                         <th style='width:70px'>Action</th>
                         <?php } ?>
@@ -31,7 +30,7 @@
                                                   LEFT JOIN jurusan d ON a.kode_jurusan=d.kode_jurusan
                                                     where a.kode_kurikulum='$kurikulum[kode_kurikulum]'
                                                       ORDER BY a.urutan ASC");
-                    $no = 1;
+                    $no = 1;  
                     while($r=mysqli_fetch_array($tampil)){
                     echo "<tr><td>$no</td>
                               <td>$r[kode_pelajaran]</td>
@@ -170,8 +169,8 @@
             </div>";
 }elseif($_GET[act]=='tambah'){
     if (isset($_POST[tambah])){
-        mysqli_query($koneksi,"INSERT INTO mata_pelajaran VALUES('$_POST[a]','$_POST[b]','$_POST[c]','$_POST[d]','$_POST[e]','$_POST[f]',
-                                                          '$_POST[g]','$_POST[h]','$_POST[i]','$_POST[j]','$_POST[k]','$_POST[n]','$_POST[l]','$_POST[m]')");
+        mysqli_query($koneksi,"INSERT INTO mata_pelajaran(kode_pelajaran, id_kelompok_mata_pelajaran, kode_jurusan, nip, kode_kurikulum, namamatapelajaran, namamatapelajaran_en, tingkat, kompetensi_umum, kompetensi_khusus, jumlah_jam, sesi, aktif) VALUES('$_POST[a]','$_POST[b]','$_POST[c]','$_POST[d]','$_POST[e]','$_POST[f]',
+                                                          '$_POST[g]','$_POST[h]','$_POST[i]','$_POST[j]','$_POST[k]','$_POST[n]','$_POST[m]')");
         echo "<script>document.location='index.php?view=matapelajaran';</script>";
     }
 
@@ -216,7 +215,6 @@
                     <tr><th scope='row'>Kompetensi Umum</th>           <td><input type='text' class='form-control' name='i' value='$s[kompetensi_umum]'></td></tr>
                     <tr><th scope='row'>Kompetensi Khusus</th>           <td><input type='text' class='form-control' name='j' value='$s[kompetensi_khusus]'></td></tr>
                     <tr><th scope='row'>Jumlah Jam</th>           <td><input type='text' class='form-control' name='k' value='$s[jumlah_jam]'></td></tr>
-                    <tr><th scope='row'>Urutan</th>           <td><input type='text' class='form-control' name='l' value='$s[urutan]'></td></tr>
                     <tr><th scope='row'>Sesi</th>           <td><input type='text' class='form-control' name='n'></td></tr>
                     <tr><th scope='row'>Kelompok</th> <td><select class='form-control' name='b'> 
                              <option value='0' selected>- Pilih Kelompok Mata Pelajaran -</option>"; 

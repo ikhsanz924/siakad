@@ -18,7 +18,7 @@
             <li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Manajemen Mutu</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=siswa"><i class="fa fa-circle-o"></i>Arsip</a></li>
+                <li><a href="index.php?view=laporanmutu"><i class="fa fa-circle-o"></i>Arsip</a></li>
               </ul>
             </li>
           </ul>

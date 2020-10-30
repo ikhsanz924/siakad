@@ -16,14 +16,22 @@
             <li><a href="index.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
            
             <li class="treeview">
-              <a href="#"><i class="fa fa-th"></i> <span>Keuangan</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-th"></i> <span>Komite</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-              <li><a href="index.php?view=test"><i class="fa fa-circle-o"></i> Data Uang Masuk</a></li>
-                <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Data laporan BOSDA</a></li>
-                <li><a href="index.php?view=riwayatkeuangan"><i class="fa fa-circle-o"></i> Riwayat Keuangan Siswa</a></li>
+              <li><a href="index.php?view=laporanrab"><i class="fa fa-circle-o"></i>Upload Laporan RAB</a></li>
+              <li><a href="index.php?view=saldokomite"><i class="fa fa-circle-o"></i>Laporan Saldo Komite</a></li>
+              <li><a href="index.php?view=gajipegawai"><i class="fa fa-circle-o"></i>Data Gaji Guru</a></li>
+              <li><a href="index.php?view=riwayatkeuangan"><i class="fa fa-circle-o"></i>SPP Komite Murid</a></li>
               </ul>
             </li>
             
+            <li class="treeview">
+              <a href="#"><i class="fa fa-th"></i> <span>BOSDA</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">            
+                <li><a href="index.php?view=laporanrab"><i class="fa fa-circle-o"></i> Upload laporan RAB</a></li>
+                <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Upload laporan BKP</a></li>
+              </ul>
+            </li>
           </ul>
           
         </section>
