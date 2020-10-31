@@ -74,47 +74,45 @@
 <?php 
 }elseif($_GET[act]=='edit'){
     if (isset($_POST[update])){
-        mysqli_query($koneksi,"UPDATE gaji SET kelas = '$_POST[a]',
-                                         instansi = '$_POST[b]',
-                                         nilai = '$_POST[c]',
-                                         keterangan = '$_POST[d]'
+        $day1 = strtotime($_POST["b"]);
+        $day1 = date('Y-m-d', $day1);
+        mysqli_query($koneksi,"UPDATE gaji_pegawai SET tanggal = '$day1',
+                                         gaji_pokok_mengajar = '$_POST[c]',
+                                         tunjangan_jabatan = '$_POST[d]',
+                                         tunjangan_wali = '$_POST[e]',
+                                         tunjangan_kajur = '$_POST[f]',
+                                         tunjangan_kalab = '$_POST[g]',
+                                         potongan_sosial = '$_POST[h]'
                                          where id='$_POST[id]'");
-      echo "<script>document.location='index.php?view=nilaiukklsp';</script>";
+      echo "<script>document.location='index.php?view=gajipegawai';</script>";
     }
-    $edit = mysqli_query($koneksi,"SELECT * FROM nilai_ukk_lsp where id='$_GET[id]'");
+    $edit = mysqli_query($koneksi,"SELECT * FROM gaji_pegawai where id='$_GET[id]'");
     $s = mysqli_fetch_array($edit);
     echo "<div class='col-md-12'>
               <div class='box box-info'>
                 <div class='box-header with-border'>
-                  <h3 class='box-title'>Edit Data Nilai UKK LSP</h3>
+                  <h3 class='box-title'>Edit Data Gaji Pegawai</h3>
                 </div>
               <div class='box-body'>
               <form method='POST' class='form-horizontal' action='' enctype='multipart/form-data'>
                 <div class='col-md-12'>
                   <table class='table table-condensed table-bordered'>
-                  <tbody>
-                  <input type='hidden' name='id' value='$s[id]'>
-                    <tr><th scope='row'>Kelas</th>               <td><select class='form-control' name='a'> 
-                                                                          <option value='0' selected>- Pilih Kelas -</option>"; 
-                                                                            $kelas = mysqli_query($koneksi,"SELECT * FROM kelas");
-                                                                            while($a = mysqli_fetch_array($kelas)){
-                                                                              if ($a[kode_kelas] == $s[kode_kelas]){
-                                                                                echo "<option value='$a[kode_kelas]' selected>$a[kode_kelas]</option>";
-                                                                              }else{
-                                                                                echo "<option value='$a[kode_kelas]'>$a[kode_kelas]</option>";
-                                                                              }
-                                                                            }
-                                                                         echo "</select></td></tr>
-                    <tr><th scope='row'>instansi</th>           <td><input type='text' class='form-control' name='b' value='$s[instansi]'></td></tr>
-                    <tr><th scope='row'>nilai</th>          <td><input type='number' class='form-control' value='$s[nilai]' name='c'></td></tr>
-                    <tr><th scope='row'>Keterangan</th>           <td><input type='text' class='form-control' name='d' value='$s[keterangan]'></td></tr>
-                  </tbody>
+                    <tbody>
+                      <input type='hidden' name='id' value='$s[id]'>
+                      <tr><th scope='row'>Tanggal</th>                       <td><input type='Date' value='$s[tanggal]' class='form-control' name='b'></td></tr>
+                      <tr><th scope='row'>Gaji Pokok Mengajar</th>           <td><input type='number' value='$s[gaji_pokok_mengajar]' class='form-control' name='c'></td></tr>
+                      <tr><th scope='row'>Tunjangan Jabatan</th>             <td><input type='number' value='$s[tunjangan_jabatan]' class='form-control' name='d'></td></tr>
+                      <tr><th scope='row'>Tunjangan Wali Kelas</th>          <td><input type='number' value='$s[tunjangan_wali]' class='form-control' name='e'></td></tr>
+                      <tr><th scope='row'>Tunjangan Kajur</th>               <td><input type='number' value='$s[tunjangan_kajur]' class='form-control' name='f'></td></tr>
+                      <tr><th scope='row'>Tunjangan Kalab</th>               <td><input type='number' value='$s[tunjangan_kalab]' class='form-control' name='g'></td></tr>
+                      <tr><th scope='row'>Potongan Sosial</th>               <td><input type='number' value='$s[potongan_sosial]' class='form-control'  name='h'></td></tr>
+                    </tbody>
                   </table>
                 </div>
               </div>
               <div class='box-footer'>
                     <button type='submit' name='update' class='btn btn-info'>Update</button>
-                    <a href='index.php?view=nilaiukklsp'><button class='btn btn-default pull-right'>Cancel</button></a>
+                    <a href='index.php?view=gajipegawai'><button class='btn btn-default pull-right'>Cancel</button></a>
                   </div>
               </form>
             </div>";

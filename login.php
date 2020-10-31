@@ -98,7 +98,7 @@ if (isset($_POST[login])){
 		$r = mysqli_fetch_array($guru);
 		$_SESSION[id]     = $r[nip];
 		$_SESSION[namalengkap]  = $r[nama_guru];
-		$_SESSION[level]    = 'guru';
+		$_SESSION[level]    = $r[level];
 		include "config/user_agent.php";
 		mysqli_query($koneksi,"INSERT INTO users_aktivitas VALUES('','$r[nip]','$ip','$user_browser $version','$user_os','guru','".date('H:i:s')."','".date('Y-m-d')."')");
     echo "<script>document.location='index.php';</script>";

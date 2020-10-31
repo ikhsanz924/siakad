@@ -3,7 +3,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Mata Pelajaran </h3>
-                  <?php if($_SESSION[level]!='kepala'){ ?>
+                  <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
                   <a class='pull-right btn btn-primary btn-sm' href='index.php?view=matapelajaran&act=tambah'>Tambahkan Data</a>
                   <?php } ?>
                 </div><!-- /.box-header -->
@@ -17,7 +17,7 @@
                         <th>Jurusan</th>
                         <th>Tingkat</th>
                         <th>Guru Pengajar </th>
-                        <?php if($_SESSION[level]!='kepala'){ ?>
+                        <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
                         <th style='width:70px'>Action</th>
                         <?php } ?>
                       </tr>
@@ -39,10 +39,10 @@
                               <td>$r[tingkat]</td>
                               <td>$r[nama_guru]</td>
                               ";
-                              if($_SESSION[level]!='kepala'){
-                        echo "<td><center>
-                                <a class='btn btn-primary btn-xs' title='Detail Data' href='?view=matapelajaran&act=detail&id=$r[kode_pelajaran]'><span class='glyphicon glyphicon-search'></span></a>
-                                <a class='btn btn-success btn-xs' title='Edit Data' href='?view=matapelajaran&act=edit&id=$r[kode_pelajaran]'><span class='glyphicon glyphicon-edit'></span></a>
+                              echo "<td><center>
+                              <a class='btn btn-primary btn-xs' title='Detail Data' href='?view=matapelajaran&act=detail&id=$r[kode_pelajaran]'><span class='glyphicon glyphicon-search'></span></a>";
+                              if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
+                            echo"<a class='btn btn-success btn-xs' title='Edit Data' href='?view=matapelajaran&act=edit&id=$r[kode_pelajaran]'><span class='glyphicon glyphicon-edit'></span></a>
                                 <a class='btn btn-danger btn-xs' title='Delete Data' href='?view=matapelajaran&hapus=$r[kode_pelajaran]'><span class='glyphicon glyphicon-remove'></span></a>
                               </center></td>";
                               }
@@ -93,7 +93,7 @@
                     <input type='hidden' name='id' value='$s[kode_pelajaran]'>
                     <tr><th width='140px' scope='row'>Kurikulum</th> <td><select class='form-control' name='e'> 
                              <option value='0' selected>- Pilih Kurikulum -</option>"; 
-                              $kurikulum = mysqli_query($koneksi,"SELECT * FROM kurikulum");
+                              $kurikulum = mysqli_query($koneksi,"SELECT * FROM kurikulum where status_kurikulum");
                                   while($a = mysqli_fetch_array($kurikulum)){
                                     if ($s[kode_kurikulum]==$a[kode_kurikulum]){
                                        echo "<option value='$a[kode_kurikulum]' selected>$a[nama_kurikulum]</option>";

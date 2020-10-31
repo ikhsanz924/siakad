@@ -3,7 +3,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Jadwal Kegiatan Rekruitasi </h3>
-                  <?php if($_SESSION[level]!='kepala'){ ?>
+                  <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
                   <a class='pull-right btn btn-primary btn-sm' href='index.php?view=jadwalrekrut&act=tambahjadwalrekrut'>Tambahkan Data Dokumen</a>
                   <?php } ?>
                 </div><!-- /.box-header -->
@@ -14,7 +14,9 @@
                         <th>No</th>
                         <th>Nama Kegiatan</th>
                         <th>Tanggal</th>
-                        <th>Action</th>
+                        <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
+                        <th style='width:70px'>Action</th>
+                        <?php } ?>
                       </tr>
                     </thead>
                     <tbody>
@@ -26,7 +28,7 @@
                     echo "<tr><td>$no</td>
                               <td>$r[nm_dokumen]</td>
                               <td>$r[tanggal]</td>";
-                              if($_SESSION[level]!='kepala'){
+                              if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
                         echo "<td><center>
                                 <a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=jadwalrekrut&act=detailjadwalrekrut&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='?view=jadwalrekrut&act=editjadwalrekrut&id=$r[id]'><span class='glyphicon glyphicon-edit'></span></a>

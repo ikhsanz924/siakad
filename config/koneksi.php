@@ -67,21 +67,21 @@ function cek_session_kesiswaan(){
 
 function cek_session_bkk(){
 	$level = $_SESSION[level];
-	if ($level != 'bkk' AND $level != 'superuser' AND $level != 'kepala'){
+	if ($level != 'bkk' AND $level != 'guru' AND $level != 'siswa' AND $level != 'superuser' AND $level != 'kepala'){
 		echo "<script>document.location='index.php';</script>";
 	}
 }
 
 function cek_session_humas(){
 	$level = $_SESSION[level];
-	if ($level != 'humas' AND $level != 'superuser' AND $level != 'kepala'){
+	if ($level != 'humas' AND $level != 'guru'  AND $level != 'siswa' AND $level != 'superuser' AND $level != 'kepala'){
 		echo "<script>document.location='index.php';</script>";
 	}
 }
 
 function cek_session_subrayon(){
 	$level = $_SESSION[level];
-	if ($level != 'kurikulum' AND $level != 'subrayon' AND $level != 'superuser' AND $level != 'kepala'){
+	if ($level != 'kurikulum' AND $level != 'guru' AND $level != 'siswa' AND $level != 'subrayon' AND $level != 'superuser' AND $level != 'kepala'){
 		echo "<script>document.location='index.php';</script>";
 	}
 }
@@ -101,7 +101,7 @@ function cek_session_tu(){
 
 function cek_session_kurikulum(){
 	$level = $_SESSION[level];
-	if ($level != 'kurikulum' AND $level != 'superuser' AND $level != 'kepala'){
+	if ($level != 'kurikulum' AND $level !='guru' AND $level !='siswa' AND $level != 'superuser' AND $level != 'kepala'){
 		echo "<script>document.location='index.php';</script>";
 	}
 }

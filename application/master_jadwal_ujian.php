@@ -3,7 +3,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Jadwal Ujian </h3>
-                  <?php if($_SESSION[level]!='kepala'){ ?>
+                  <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
                   <a class='pull-right btn btn-primary btn-sm' href='index.php?view=jadwalujian&act=tambahjadwalujian'>Tambahkan Data Jadwal</a>
                   <?php } ?>
                 </div><!-- /.box-header -->
@@ -27,16 +27,12 @@
                     echo "<tr><td>$no</td>
                               <td>$r[nm_ujian]</td>
                               <td>$r[semester]</td>
-                              <td>$r[tahun]</td>";
-                              if($_SESSION[level]!='kepala'){
-                        echo "<td><center>
-                                <a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=jadwalujian&act=detailjadwalujian&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>
-                                <a class='btn btn-success btn-xs' title='Edit Data' href='?view=jadwalujian&act=editjadwalujian&id=$r[id]'><span class='glyphicon glyphicon-edit'></span></a>
-                                <a class='btn btn-danger btn-xs' title='Delete Data' href='?view=jadwalujian&hapus=$r[id]'><span class='glyphicon glyphicon-remove'></span></a>
-                              </center></td>";
-                              }else{
-                                echo "<td><center>
-                                <a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=jadwalujian&act=detailjadwalujian&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>
+                              <td>$r[tahun]</td> 
+                              <td><center>
+                              <a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=jadwalujian&act=detailjadwalujian&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>";
+                              if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
+                        echo "<a class='btn btn-success btn-xs' title='Edit Data' href='?view=jadwalujian&act=editjadwalujian&id=$r[id]'><span class='glyphicon glyphicon-edit'></span></a>
+                              <a class='btn btn-danger btn-xs' title='Delete Data' href='?view=jadwalujian&hapus=$r[id]'><span class='glyphicon glyphicon-remove'></span></a>
                               </center></td>";
                               }
                             echo "</tr>";

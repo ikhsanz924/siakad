@@ -17,9 +17,21 @@
             <li><a href="index.php?view=absensiswa&act=detailabsenguru"><i class="fa fa-th-large"></i> <span>Absensi Siswa</span></a></li>
            <!-- <li><a href="index.php?view=bahantugas&act=listbahantugasguru"><i class="fa fa-file"></i><span>Bahan dan Tugas</span></a></li> -->
            <!-- <li><a href="index.php?view=soal&act=detailguru"><i class="fa fa-users"></i><span>Quiz / Ujian Online</span></a></li> -->
-           <li><a href="index.php?view=forum&act=detailguru"><i class="fa fa-th-list"></i> <span>Forum Diskusi</span></a></li>
-            <li><a href="index.php?view=kompetensiguru"><i class="fa fa-tags"></i> <span>Kompetensi Dasar</span></a></li>
-            <li><a href="index.php?view=journalguru"><i class="fa fa-list"></i> <span>Journal KBM</span></a></li>
+           <!-- <li><a href="index.php?view=forum&act=detailguru"><i class="fa fa-th-list"></i> <span>Forum Diskusi</span></a></li> -->
+           <!-- <li><a href="index.php?view=kompetensiguru"><i class="fa fa-tags"></i> <span>Kompetensi Dasar</span></a></li> -->
+           <!-- <li><a href="index.php?view=journalguru"><i class="fa fa-list"></i> <span>Journal KBM</span></a></li> -->
+            <li><a href="index.php?view=matapelajaran"><i class="fa fa-list"></i> Data Mata Pelajaran</a></li>
+            <li><a href="index.php?view=jadwalpelajaran"><i class="fa fa-list"></i> Data Jadwal Pelajaran</a></li>
+            <li><a href="index.php?view=skberkala"><i class="fa fa-circle-o"></i>SK Berkala</a></li>
+            <li><a href="index.php?view=jadwalujian"><i class="fa fa-circle-o"></i>Jadwal Ujian</a></li>
+            <li><a href="index.php?view=jadwalpengawas"><i class="fa fa-circle-o"></i>Jadwal Pengawas</a></li>
+            <li><a href="index.php?view=pengawassilang"><i class="fa fa-circle-o"></i>Data Pengawas Silang</a></li>
+            <li><a href="index.php?view=jadwalun"><i class="fa fa-circle-o"></i>Jadwal UN</a></li>
+            <li><a href="index.php?view=jadwalukk"><i class="fa fa-circle-o"></i>Jadwal UKK</a></li>
+            <li><a href="index.php?view=nilaiukkdudi"><i class="fa fa-circle-o"></i>Nilai UKK Prakrin</a></li>
+            <li><a href="index.php?view=datatempatprakrin"><i class="fa fa-circle-o"></i>Data Tempat Prakrin</a></li>
+            <li><a href="index.php?view=dataalumni"><i class="fa fa-circle-o"></i> Data Kerja Alumni</a></li>
+            <li><a href="index.php?view=jadwalrekrut"><i class="fa fa-circle-o"></i> Jadwal Kegiatan Rekruitasi</a></li>
             <li class="treeview">
               <a href="#"><i class="fa fa-calendar"></i> <span>Laporan Nilai Siswa</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -27,6 +39,6 @@
                 <li><a href="index.php?view=raport&act=detailguru"><i class="fa fa-circle-o"></i> Input Nilai Raport</a></li>
               </ul>
             </li>
-            <li><a href="index.php?view=dokumentasiguru"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+           <!-- <li><a href="index.php?view=dokumentasiguru"><i class="fa fa-book"></i> <span>Documentation</span></a></li> -->
           </ul>
         </section>

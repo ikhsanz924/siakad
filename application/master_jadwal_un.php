@@ -3,7 +3,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Jadwal UN</h3>
-                  <?php if($_SESSION[level]!='kepala'){ ?>
+                  <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
                   <a class='pull-right btn btn-primary btn-sm' href='index.php?view=jadwalun&act=tambah'>Tambahkan Data</a>
                   <?php } ?>
                 </div><!-- /.box-header -->
@@ -17,7 +17,9 @@
                         <th>Mata Pelajaran</th>
                         <th>Sesi</th>
                         <th>Keterangan</th>
-                        <th>Action</th>
+                        <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
+                        echo "<th>Action</th>";
+                        } ?>
                       </tr>
                     </thead>
                     <tbody>
@@ -32,7 +34,7 @@
                               <td>$r[mata_pelajaran]</td>
                               <td>$r[sesi]</td>
                               <td>$r[keterangan]</td>";
-                              if($_SESSION[level]!='kepala'){
+                              if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
                         echo "<td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='?view=jadwalun&act=edit&id=$r[id]'><span class='glyphicon glyphicon-edit'></span></a>
                                 <a class='btn btn-danger btn-xs' title='Delete Data' href='?view=jadwalun&hapus=$r[id]'><span class='glyphicon glyphicon-remove'></span></a>

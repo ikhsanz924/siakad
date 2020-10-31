@@ -3,7 +3,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data SK Berkala </h3>
-                  <?php if($_SESSION[level]!='kepala'){ ?>
+                  <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){ ?>
                   <a class='pull-right btn btn-primary btn-sm' href='index.php?view=skberkala&act=tambahskberkala'>Tambahkan Data SK Berkala</a>
                   <?php } ?>
                 </div><!-- /.box-header -->
@@ -29,10 +29,10 @@
                               <td>$r[no_surat]</td>
                               <td>$r[judul_surat]</td>
                               <td>$r[jenis_surat]</td>
-                              <td>$r[tanggal]</td>";
-                              if($_SESSION[level]!='kepala'){
-                        echo "<td><center>
-                                <a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=skberkala&act=detailskberkala&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>
+                              <td>$r[tanggal]</td>
+                              <td><center>";
+                              if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
+                        echo "<a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=skberkala&act=detailskberkala&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='?view=skberkala&act=editskberkala&id=$r[id]'><span class='glyphicon glyphicon-edit'></span></a>
                                 <a class='btn btn-danger btn-xs' title='Delete Data' href='?view=skberkala&hapus=$r[id]'><span class='glyphicon glyphicon-remove'></span></a>
                               </center></td>";
