@@ -124,7 +124,7 @@
     if (isset($_POST[tambah])){
       $day1 = strtotime($_POST["b"]);
       $day1 = date('Y-m-d', $day1);
-      $tambahnama = mysqli_query($koneksi,"SELECT nama_guru FROM guru where nip='$_POST[a]'");
+      $tambahnama = mysqli_query($koneksi,"SELECT nama_guru FROM guru where nuptk='$_POST[a]'");
       $nama = mysqli_fetch_array($tambahnama);
         mysqli_query($koneksi,"INSERT INTO gaji_pegawai(nip, nama, tanggal,jumlah_jam,gaji_pokok_mengajar, tunjangan_jabatan, tunjangan_wali, tunjangan_kajur, tunjangan_kalab, potongan_sosial) VALUES('$_POST[a]','$nama[nama_guru]','$day1','$_POST[c]','$_POST[d]','$_POST[e]','$_POST[f]','$_POST[g]','$_POST[h]','$_POST[i]')");
         echo "<script>document.location='index.php?view=gajipegawai';</script>";
