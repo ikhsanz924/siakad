@@ -12,11 +12,9 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama</th>
-                        <th>NIP</th>
-                        <th>Golongan</th>
-                        <th>Asal Sekolah</th>
+                        <th>Nama Sekolah</th>
                         <th>Alamat</th>
+                        <th>Nama Kepala Sekolah</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -27,11 +25,9 @@
                     while($r=mysqli_fetch_array($tampil)){
                     $tanggal = tgl_indo($r[tgl_posting]);
                     echo "<tr><td>$no</td>
-                              <td>$r[nama]</td>
-                              <td>$r[nip]</td>
-                              <td>$r[golongan]</td>
-                              <td>$r[asal_sekolah]</td>
-                              <td>$r[alamat]</td>";
+                              <td>$r[nama_sekolah]</td>
+                              <td>$r[alamat]</td>
+                              <td>$r[nama_kepala]</td>";
                               if($_SESSION[level]!='kepala'){
                         echo "<td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='?view=anggotasubrayon&act=edit&id=$r[id]'><span class='glyphicon glyphicon-edit'></span></a>
@@ -55,11 +51,9 @@
 <?php 
 }elseif($_GET[act]=='edit'){
   if (isset($_POST[update])){
-      mysqli_query($koneksi,"UPDATE anggota_sub_rayon SET nama = '$_POST[a]',
-                                       nip = '$_POST[b]',
-                                       golongan = '$_POST[c]',
-                                       asal_sekolah = '$_POST[d]',
-                                       alamat = '$_POST[e]'where id='$_POST[id]'");
+      mysqli_query($koneksi,"UPDATE anggota_sub_rayon SET nama_sekolah = '$_POST[a]',
+                                       nama_kepala = '$_POST[b]',
+                                       alamat = '$_POST[c]' where id='$_POST[id]'");
     echo "<script>document.location='index.php?view=anggotasubrayon';</script>";
   }
   $edit = mysqli_query($koneksi,"SELECT * FROM anggota_sub_rayon where id='$_GET[id]'");
@@ -75,11 +69,9 @@
                 <table class='table table-condensed table-bordered'>
                 <tbody>
                   <input type='hidden' name='id' value='$s[id]'>
-                  <tr><th scope='row'>Nama</th>          <td><input type='text' class='form-control' value='$s[nama]' name='a'></td></tr>
-                  <tr><th scope='row'>NIP</th>        <td><input type='number' class='form-control' value='$s[nip]' name='b'></td></tr>
-                  <tr><th scope='row'>Golongan</th>              <td><input type='text' class='form-control' value='$s[golongan]' name='c'></td></tr>
-                  <tr><th scope='row'>Asal Sekolah</th>               <td><input type='text' class='form-control' value='$s[asal_sekolah]' name='d'></td></tr>
-                  <tr><th scope='row'>Alamat</th>                <td><input type='text' class='form-control' value='$s[alamat]' name='e'></td></tr>
+                  <tr><th scope='row'>Nama Sekolah</th>          <td><input type='text' class='form-control' value='$s[nama_sekolah]' name='a'></td></tr>
+                  <tr><th scope='row'>Nama Kepala Sekolah</th>        <td><input type='text' class='form-control' value='$s[nama_kepala]' name='b'></td></tr>
+                  <tr><th scope='row'>Alamat</th>              <td><input type='text' class='form-control' value='$s[golongan]' name='c'></td></tr>
                 </tbody>
                 </table>
               </div>
@@ -93,7 +85,7 @@
           </div>";
 }elseif($_GET[act]=='tambah'){
   if (isset($_POST[tambah])){
-      mysqli_query($koneksi,"INSERT INTO anggota_sub_rayon VALUES('','$_POST[a]','$_POST[b]','$_POST[c]','$_POST[d]','$_POST[e]')");
+      mysqli_query($koneksi,"INSERT INTO anggota_sub_rayon (nama_sekolah, nama_kepala, alamat) VALUES('$_POST[a]','$_POST[b]','$_POST[c]')");
       echo "<script>document.location='index.php?view=anggotasubrayon';</script>";
   }
 
@@ -107,11 +99,9 @@
               <div class='col-md-12'>
                 <table class='table table-condensed table-bordered'>
                 <tbody>
-                  <tr><th scope='row'>Nama</th>          <td><input type='text' class='form-control' name='a'></td></tr>
-                  <tr><th scope='row'>NIP</th>        <td><input type='number' class='form-control' name='b'></td></tr>
-                  <tr><th scope='row'>Gologan</th>              <td><input type='text' class='form-control' name='c'></td></tr>
-                  <tr><th scope='row'>Asal Sekolah</th>               <td><input type='text' class='form-control' name='d'></td></tr>
-                  <tr><th scope='row'>Alamat</th>                <td><input type='text' class='form-control' name='e'></td></tr>
+                  <tr><th scope='row'>Nama Sekolah</th>          <td><input type='text' class='form-control' name='a'></td></tr>
+                  <tr><th scope='row'>Nama Kepala Sekolah</th>        <td><input type='text' class='form-control' name='b'></td></tr>
+                  <tr><th scope='row'>Alamat</th>              <td><input type='text' class='form-control' name='c'></td></tr>
                 </tbody>
                 </table>
               </div>

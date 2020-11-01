@@ -14,8 +14,6 @@
                         <th>No</th>
                         <th>Judul Notulensi</th>
                         <th>Tanggal</th>
-                        <th>Tempat</th>
-                        <th>Keterangan</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -27,9 +25,7 @@
                     $tanggal = tgl_indo($r[tgl_posting]);
                     echo "<tr><td>$no</td>
                               <td>$r[judul_notulensi]</td>
-                              <td>$r[tanggal]</td>
-                              <td>$r[tempat]</td>
-                              <td>$r[keterangan]</td>";
+                              <td>$r[tanggal]</td>";
                               if($_SESSION[level]!='kepala'){
                         echo "<td><center>
                                 <a class='btn btn-info btn-xs' title='Lihat Detail' href='?view=hasilnotulensi&act=detailhasilnotulensi&id=$r[id]'><span class='glyphicon glyphicon-search'></span></a>
@@ -67,10 +63,10 @@
       
       if ($filename != ''){      
         if (move_uploaded_file($_FILES['ax']['tmp_name'], $uploadfile)) {
-          mysqli_query($koneksi,"INSERT INTO hasil_notulensi(file_notulensi, judul_notulensi, tanggal, tempat, keterangan) VALUES('$filenamee','$_POST[ab]','$day1','$_POST[ad]','$_POST[ae]')");
+          mysqli_query($koneksi,"INSERT INTO hasil_notulensi(file_notulensi, judul_notulensi, tanggal) VALUES('$filenamee','$_POST[ab]','$day1')");
           }
       }else{
-          mysqli_query($koneksi,"INSERT INTO hasil_notulensi(judul_notulensi, tanggal, tempat, keterangan)  VALUES('',$_POST[ab]','$day1','$_POST[ad]','$_POST[ae]')");
+          mysqli_query($koneksi,"INSERT INTO hasil_notulensi(judul_notulensi, tanggal)  VALUES('',$_POST[ab]','$day1')");
         }
         echo "<script>document.location='index.php?view=hasilnotulensi';</script>";
   }
@@ -94,8 +90,6 @@
                 </td></tr>
                     <tr><th scope='row'>Judul Notulensi</th>               <td><input type='text' class='form-control' name='ab'></td></tr>
                     <tr><th scope='row'>Tanggal</th>                  <td><input type='date' class='form-control' name='ac'></td></tr>
-                    <tr><th scope='row'>Tempat</th>                  <td><input type='text' class='form-control' name='ad'></td></tr>
-                    <tr><th scope='row'>Keterangan</th>                  <td><input type='text' class='form-control' name='ae'></td></tr>
                   </tbody>
                   </table>
                 </div>
@@ -117,10 +111,10 @@
       $uploadfile = $dir_file . $filenamee;
       if ($filename != ''){      
         if (move_uploaded_file($_FILES['ax']['tmp_name'], $uploadfile)) {
-          mysqli_query($koneksi,"UPDATE hasil_notulensi SET  file_notulensi = '$filenamee', judul_notulensi = '$_POST[ab]', tanggal = '$day1', tempat = '$_POST[ad]', keterangan = '$_POST[ae]'WHERE id = $_POST[id]");
+          mysqli_query($koneksi,"UPDATE hasil_notulensi SET  file_notulensi = '$filenamee', judul_notulensi = '$_POST[ab]', tanggal = '$day1'WHERE id = $_POST[id]");
         }
       }else{
-          mysqli_query($koneksi,"UPDATE hasil_notulensi SET judul_notulensi = '$_POST[ab]', tanggal = '$day1', tempat = '$_POST[ad]', keterangan = '$_POST[ae]'WHERE id = $_POST[id]");
+          mysqli_query($koneksi,"UPDATE hasil_notulensi SET judul_notulensi = '$_POST[ab]', tanggal = '$day1' WHERE id = $_POST[id]");
       }
       echo "<script>document.location='index.php?view=hasilnotulensi';</script>";
   }
@@ -146,8 +140,6 @@
                 </td></tr>
                     <tr><th scope='row'>Semester</th>               <td><input type='text' class='form-control' value='$s[judul_notulensi]' name='ab'></td></tr>
                     <tr><th scope='row'>Tanggal</th>           <td><input type='date' class='form-control' value='$s[tanggal]' name='ac'></td></tr>
-                    <tr><th scope='row'>Tempat</th>               <td><input type='text' class='form-control' value='$s[tempat]' name='ad'></td></tr>
-                    <tr><th scope='row'>Keterangan</th>               <td><input type='text' class='form-control' value='$s[keterangan]' name='ae'></td></tr>
                   </tbody>
                   </table>
                 </div>

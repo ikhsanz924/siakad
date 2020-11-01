@@ -29,7 +29,7 @@
               <a href="#"><i class="fa fa-th"></i> <span>BOSDA</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">            
                 <li><a href="index.php?view=laporanrab"><i class="fa fa-circle-o"></i> Upload laporan RAB</a></li>
-                <li><a href="index.php?view=raportcetakuts"><i class="fa fa-circle-o"></i> Upload laporan BKP</a></li>
+                <li><a href="index.php?view=laporanbkp"><i class="fa fa-circle-o"></i> Upload laporan BKP</a></li>
               </ul>
             </li>
           </ul>

@@ -89,7 +89,11 @@
                   <tr><th scope='row'>Sampai Jam</th>              <td><input type='time' class='form-control' value='$s[sampai_jam]' name='c'></td></tr>
                   <tr><th scope='row'>Mata Pelajaran</th>               <td><input type='text' class='form-control' value='$s[mata_pelajaran]' name='d'></td></tr>
                   <tr><th scope='row'>Sesi</th>                <td><input type='text' class='form-control' value='$s[sesi]' name='e'></td></tr>
-                  <tr><th scope='row'>Keterangan</th>                <td><input type='text' class='form-control' value='$s[keterangan]' name='f'></td></tr>
+                  <tr><th scope='row'>Keterangan</th>              <td><select class='form-control' name='f'>
+                    <option value='UN'>UN</option>
+                    <option value='UN Susulan'>UN Susulan</option>
+                    </select></td></tr>
+
                 </tbody>
                 </table>
               </div>
@@ -128,7 +132,10 @@
                 <tr><th scope='row'>Sampai Jam</th>              <td><input type='time' class='form-control' name='c'></td></tr>
                 <tr><th scope='row'>Mata Pelajaran</th>               <td><input type='text' class='form-control' name='d'></td></tr>
                 <tr><th scope='row'>Sesi</th>                <td><input type='text' class='form-control' name='e'></td></tr>
-                <tr><th scope='row'>Keterangan</th>                <td><input type='text' class='form-control' name='f'></td></tr>
+                <tr><th scope='row'>Keterangan</th>              <td><select class='form-control' name='f'>
+                    <option value='UN'>UN</option>
+                    <option value='UN Susulan'>UN Susulan</option>
+                    </select></td></tr>
                 </tbody>
                 </table>
               </div>

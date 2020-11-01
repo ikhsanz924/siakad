@@ -274,7 +274,13 @@
                           include "application/home_admin_row2.php";
                   echo "</div>";
               }
-          }elseif ($_GET[view]=='surat'){
+          }elseif ($_GET[view]=='laporanbkp'){
+            cek_session_keuangan();
+            echo "<div class='row'>";
+                    include "application/master_laporan_bkp.php";
+            echo "</div>";
+          }
+          elseif ($_GET[view]=='surat'){
             cek_session_manmutu();
             echo "<div class='row'>";
                     include "application/master_surat.php";

@@ -15,7 +15,7 @@
                         <th>Nama Sekolah</th>
                         <th>Jurusan</th>
                         <th>Waktu Pelaksanaan</th>
-                        <th>Penyelenggara</th>
+                        <th>Mitra DUDI</th>
                         <?php if($_SESSION[level]!='kepala' AND $_SESSION[level]!='guru' AND $_SESSION[level]!='siswa'){
                         echo "<th>Action</th>";
                         } ?>

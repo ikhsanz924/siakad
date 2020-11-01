@@ -19,7 +19,6 @@
               <ul class="treeview-menu">
               <li><a href="index.php?view=matapelajaran"><i class="fa fa-circle-o"></i> Data Mata Pelajaran</a></li>
                 <li><a href="index.php?view=jadwalpelajaran"><i class="fa fa-circle-o"></i> Data Jadwal Pelajaran</a></li>
-                <li><a href="index.php?view=guru"><i class="fa fa-circle-o"></i>Data Guru</a></li>
                 <li><a href="index.php?view=skberkala"><i class="fa fa-circle-o"></i>Upload SK Berkala</a></li>
                 <li><a href="index.php?view=jadwalujian"><i class="fa fa-circle-o"></i>Jadwal Ujian</a></li>
                 <li><a href="index.php?view=jadwalpengawas"><i class="fa fa-circle-o"></i>Jadwal Pengawas</a></li>

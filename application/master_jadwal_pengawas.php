@@ -12,7 +12,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama Ujian</th>
+                        <th>Nama Jadwal</th>
                         <th>Semester</th>
                         <th>Tahun</th>
                         <th>Action</th>
@@ -25,7 +25,7 @@
                     while($r=mysqli_fetch_array($tampil)){
                     $tanggal = tgl_indo($r[tgl_posting]);
                     echo "<tr><td>$no</td>
-                              <td>$r[nm_ujian]</td>
+                              <td>$r[judul_pengawas]</td>
                               <td>$r[semester]</td>
                               <td>$r[tahun]</td>
                               <td><center>";
@@ -64,7 +64,7 @@
       
       if ($filename != ''){      
         if (move_uploaded_file($_FILES['ax']['tmp_name'], $uploadfile)) {
-          mysqli_query($koneksi,"INSERT INTO jadwal_pengawas(nm_ujian, semester, tahun) VALUES('$filenamee','$_POST[ab]','$_POST[ac]')");
+          mysqli_query($koneksi,"INSERT INTO jadwal_pengawas(judul_pengawas, nm_ujian, semester, tahun) VALUES('$_POST[ad]','$filenamee','$_POST[ab]','$_POST[ac]')");
           }
       }else{
           mysqli_query($koneksi,"INSERT INTO jadwal_pengawas(nm_ujian, semester, tahun)  VALUES('',$_POST[ab]','$_POST[ac]')");
@@ -89,6 +89,7 @@
                   <?php echo "</a> <span style='width:155px' class='label label-info' id='upload-file-info'></span>
                 </div>
                 </td></tr>
+                <tr><th scope='row'>Judul Jadwal</th>               <td><input type='text' class='form-control' name='ad'></td></tr>
                     <tr><th scope='row'>Semester</th>               <td><input type='text' class='form-control' name='ab'></td></tr>
                     <tr><th scope='row'>Tahun</th>                  <td><input type='text' class='form-control' name='ac'></td></tr>
                   </tbody>
@@ -111,7 +112,7 @@
       $uploadfile = $dir_file . $filenamee;
       if ($filename != ''){      
         if (move_uploaded_file($_FILES['ax']['tmp_name'], $uploadfile)) {
-          mysqli_query($koneksi,"UPDATE jadwal_pengawas SET  nm_ujian = '$filenamee', semester = '$_POST[ab]', tahun = '$_POST[ac]' WHERE id = $_POST[id]");
+          mysqli_query($koneksi,"UPDATE jadwal_pengawas SET judul_pengawas='$_POST[ad]',nm_ujian = '$filenamee', semester = '$_POST[ab]', tahun = '$_POST[ac]' WHERE id = $_POST[id]");
         }
       }else{
           mysqli_query($koneksi,"UPDATE jadwal_pengawas SET semester = '$_POST[ab]', tahun = '$_POST[ac]' WHERE id = $_POST[id]");
@@ -138,6 +139,7 @@
                   <?php echo "</a> <span style='width:155px' class='label label-info' id='upload-file-info'></span>
                 </div>
                 </td></tr>
+                <tr><th scope='row'>Judul Jadwal</th>               <td><input type='text' class='form-control' value='$s[judul_pengawas]' name='ad'></td></tr>
                     <tr><th scope='row'>Semester</th>               <td><input type='text' class='form-control' value='$s[semester]' name='ab'></td></tr>
                     <tr><th scope='row'>Tahun</th>           <td><input type='text' class='form-control' value='$s[tahun]' name='ac'></td></tr>
                   </tbody>
