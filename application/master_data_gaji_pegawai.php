@@ -12,9 +12,10 @@
                     <thead>
                       <tr>
                         <th style='width:40px'>No</th>
-                        <th>NIP</th>
+                        <th>NUPTK</th>
                         <th>Nama</th>
                         <th>Tanggal</th>
+                        <th>Jumlah Jam Mengajar</th>
                         <th>Gaji Pokok Mengajar</th>
                         <th>Tunjangan Jabatan</th>
                         <th>Tunjangan Wali Kelas</th>
@@ -44,6 +45,7 @@
                               <td>$r[nip]</td>
                               <td>$r[nama]</td>
                               <td>$r[tanggal]</td>
+                              <td>$r[jumlah_jam]</td>
                               <td>Rp.";echo number_format($r['gaji_pokok_mengajar']); echo"</td>
                               <td>Rp.";echo number_format($r['tunjangan_jabatan']); echo"</td>
                               <td>Rp.";echo number_format($r['tunjangan_wali']); echo"</td>
@@ -77,12 +79,13 @@
         $day1 = strtotime($_POST["b"]);
         $day1 = date('Y-m-d', $day1);
         mysqli_query($koneksi,"UPDATE gaji_pegawai SET tanggal = '$day1',
-                                         gaji_pokok_mengajar = '$_POST[c]',
-                                         tunjangan_jabatan = '$_POST[d]',
-                                         tunjangan_wali = '$_POST[e]',
-                                         tunjangan_kajur = '$_POST[f]',
-                                         tunjangan_kalab = '$_POST[g]',
-                                         potongan_sosial = '$_POST[h]'
+                                         jumlah_jam = '$_POST[c]',
+                                         gaji_pokok_mengajar = '$_POST[d]',
+                                         tunjangan_jabatan = '$_POST[e]',
+                                         tunjangan_wali = '$_POST[f]',
+                                         tunjangan_kajur = '$_POST[g]',
+                                         tunjangan_kalab = '$_POST[h]',
+                                         potongan_sosial = '$_POST[i]'
                                          where id='$_POST[id]'");
       echo "<script>document.location='index.php?view=gajipegawai';</script>";
     }
@@ -100,12 +103,13 @@
                     <tbody>
                       <input type='hidden' name='id' value='$s[id]'>
                       <tr><th scope='row'>Tanggal</th>                       <td><input type='Date' value='$s[tanggal]' class='form-control' name='b'></td></tr>
-                      <tr><th scope='row'>Gaji Pokok Mengajar</th>           <td><input type='number' value='$s[gaji_pokok_mengajar]' class='form-control' name='c'></td></tr>
-                      <tr><th scope='row'>Tunjangan Jabatan</th>             <td><input type='number' value='$s[tunjangan_jabatan]' class='form-control' name='d'></td></tr>
-                      <tr><th scope='row'>Tunjangan Wali Kelas</th>          <td><input type='number' value='$s[tunjangan_wali]' class='form-control' name='e'></td></tr>
-                      <tr><th scope='row'>Tunjangan Kajur</th>               <td><input type='number' value='$s[tunjangan_kajur]' class='form-control' name='f'></td></tr>
-                      <tr><th scope='row'>Tunjangan Kalab</th>               <td><input type='number' value='$s[tunjangan_kalab]' class='form-control' name='g'></td></tr>
-                      <tr><th scope='row'>Potongan Sosial</th>               <td><input type='number' value='$s[potongan_sosial]' class='form-control'  name='h'></td></tr>
+                      <tr><th scope='row'>Jumlah Jam Mengajar</th>           <td><input type='number' value='$[jumlah_jam]' class='form-control' name='c'></td></tr>
+                      <tr><th scope='row'>Gaji Pokok Mengajar</th>           <td><input type='number' value='$s[gaji_pokok_mengajar]' class='form-control' name='d'></td></tr>
+                      <tr><th scope='row'>Tunjangan Jabatan</th>             <td><input type='number' value='$s[tunjangan_jabatan]' class='form-control' name='e'></td></tr>
+                      <tr><th scope='row'>Tunjangan Wali Kelas</th>          <td><input type='number' value='$s[tunjangan_wali]' class='form-control' name='f'></td></tr>
+                      <tr><th scope='row'>Tunjangan Kajur</th>               <td><input type='number' value='$s[tunjangan_kajur]' class='form-control' name='g'></td></tr>
+                      <tr><th scope='row'>Tunjangan Kalab</th>               <td><input type='number' value='$s[tunjangan_kalab]' class='form-control' name='h'></td></tr>
+                      <tr><th scope='row'>Potongan Sosial</th>               <td><input type='number' value='$s[potongan_sosial]' class='form-control'  name='i'></td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -122,7 +126,7 @@
       $day1 = date('Y-m-d', $day1);
       $tambahnama = mysqli_query($koneksi,"SELECT nama_guru FROM guru where nip='$_POST[a]'");
       $nama = mysqli_fetch_array($tambahnama);
-        mysqli_query($koneksi,"INSERT INTO gaji_pegawai(nip, nama, tanggal, gaji_pokok_mengajar, tunjangan_jabatan, tunjangan_wali, tunjangan_kajur, tunjangan_kalab, potongan_sosial) VALUES('$_POST[a]','$nama[nama_guru]','$day1','$_POST[c]','$_POST[d]','$_POST[e]','$_POST[f]','$_POST[g]','$_POST[h]')");
+        mysqli_query($koneksi,"INSERT INTO gaji_pegawai(nip, nama, tanggal,jumlah_jam,gaji_pokok_mengajar, tunjangan_jabatan, tunjangan_wali, tunjangan_kajur, tunjangan_kalab, potongan_sosial) VALUES('$_POST[a]','$nama[nama_guru]','$day1','$_POST[c]','$_POST[d]','$_POST[e]','$_POST[f]','$_POST[g]','$_POST[h]','$_POST[i]')");
         echo "<script>document.location='index.php?view=gajipegawai';</script>";
     }
 
@@ -136,20 +140,21 @@
                 <div class='col-md-12'>
                   <table class='table table-condensed table-bordered'>
                   <tbody>
-                  <tr><th scope='row'>NIP|Nama</th>               <td><select id='searchnipd' class='form-control' name='a'> 
+                  <tr><th scope='row'>NUPTK|Nama</th>               <td><select id='searchnipd' class='form-control' name='a'> 
                                                                   <option value='0' selected>- Pilih NIP -</option>"; 
                                                                     $nip = mysqli_query($koneksi,"SELECT * FROM guru");
                                                                     while($a = mysqli_fetch_array($nip)){
-                                                                        echo "<option value='$a[nip]'>$a[nip] - $a[nama_guru]</option>";
+                                                                        echo "<option value='$a[nuptk]'>$a[nuptk] - $a[nama_guru]</option>";
                                                                     }
                                                                 echo "</select></td></tr>
                     <tr><th scope='row'>Tanggal</th>                       <td><input type='Date' class='form-control' name='b'></td></tr>
-                    <tr><th scope='row'>Gaji Pokok Mengajar</th>           <td><input type='number' class='form-control' name='c'></td></tr>
-                    <tr><th scope='row'>Tunjangan Jabatan</th>             <td><input type='number' class='form-control' name='d'></td></tr>
-                    <tr><th scope='row'>Tunjangan Wali Kelas</th>             <td><input type='number' class='form-control' name='e'></td></tr>
-                    <tr><th scope='row'>Tunjangan Kajur</th>             <td><input type='number' class='form-control' name='f'></td></tr>
-                    <tr><th scope='row'>Tunjangan Kalab</th>             <td><input type='number' class='form-control' name='g'></td></tr>
-                    <tr><th scope='row'>Potongan Sosial</th>          <td><input type='number' class='form-control'  name='h'></td></tr>
+                    <tr><th scope='row'>Jumlah Jam Mengajar</th>           <td><input type='number' class='form-control' name='c'></td></tr>
+                    <tr><th scope='row'>Gaji Pokok Mengajar</th>           <td><input type='number' class='form-control' name='d'></td></tr>
+                    <tr><th scope='row'>Tunjangan Jabatan</th>             <td><input type='number' class='form-control' name='e'></td></tr>
+                    <tr><th scope='row'>Tunjangan Wali Kelas</th>             <td><input type='number' class='form-control' name='f'></td></tr>
+                    <tr><th scope='row'>Tunjangan Kajur</th>             <td><input type='number' class='form-control' name='g'></td></tr>
+                    <tr><th scope='row'>Tunjangan Kalab</th>             <td><input type='number' class='form-control' name='h'></td></tr>
+                    <tr><th scope='row'>Potongan Sosial</th>          <td><input type='number' class='form-control'  name='i'></td></tr>
                   </tbody>
                   </table>
                 </div>
