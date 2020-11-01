@@ -141,7 +141,7 @@
                   <table class='table table-condensed table-bordered'>
                   <tbody>
                   <tr><th scope='row'>NUPTK|Nama</th>               <td><select id='searchnipd' class='form-control' name='a'> 
-                                                                  <option value='0' selected>- Pilih NIP -</option>"; 
+                                                                  <option value='0' selected>- Pilih Pegawai -</option>"; 
                                                                     $nip = mysqli_query($koneksi,"SELECT * FROM guru");
                                                                     while($a = mysqli_fetch_array($nip)){
                                                                         echo "<option value='$a[nuptk]'>$a[nuptk] - $a[nama_guru]</option>";
