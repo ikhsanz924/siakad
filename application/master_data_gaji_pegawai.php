@@ -103,7 +103,7 @@
                     <tbody>
                       <input type='hidden' name='id' value='$s[id]'>
                       <tr><th scope='row'>Tanggal</th>                       <td><input type='Date' value='$s[tanggal]' class='form-control' name='b'></td></tr>
-                      <tr><th scope='row'>Jumlah Jam Mengajar</th>           <td><input type='number' value='$[jumlah_jam]' class='form-control' name='c'></td></tr>
+                      <tr><th scope='row'>Jumlah Jam Mengajar</th>           <td><input type='number' value='$s[jumlah_jam]' class='form-control' name='c'></td></tr>
                       <tr><th scope='row'>Gaji Pokok Mengajar</th>           <td><input type='number' value='$s[gaji_pokok_mengajar]' class='form-control' name='d'></td></tr>
                       <tr><th scope='row'>Tunjangan Jabatan</th>             <td><input type='number' value='$s[tunjangan_jabatan]' class='form-control' name='e'></td></tr>
                       <tr><th scope='row'>Tunjangan Wali Kelas</th>          <td><input type='number' value='$s[tunjangan_wali]' class='form-control' name='f'></td></tr>
